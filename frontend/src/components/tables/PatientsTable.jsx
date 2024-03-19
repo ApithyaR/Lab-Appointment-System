@@ -1,0 +1,137 @@
+import React ,{ useState } from 'react';
+import { Table, Button, ConfigProvider, Empty, Form, Modal, Input } from 'antd';
+
+const PatientsTable = ({ patients, loading }) => {
+
+    const [openModal, setOpenModal] = useState(false);
+
+    const [form] = Form.useForm();
+
+    const columns = [
+        {
+            title: 'Patient Name',
+            dataIndex: ['name'],
+        },
+        {
+            title: 'Email',
+            dataIndex: ['email'],
+        },
+        {
+            title: 'Edit',
+            dataIndex: 'edit',
+            render: (_, record) => (
+                <Button type='primary' onClick={()=> setOpenModal(true)}>
+                    Edit
+                </Button>
+            ),
+        },
+        {
+            title: 'Delete',
+            dataIndex: 'delete',
+            render: (_, record) => (
+                <Button danger onClick={()=>console.log("delete patient: ",record._id)}>
+                    Delete
+                </Button>
+            ),
+        },
+    ];
+
+    const handleCancel = () => {
+        setOpenModal(false);
+      };
+
+      const onFinish = (values) => {
+        console.log(values)
+
+        //API call for update patient
+
+
+        // registerTechnician(values,localStorage.user)
+        //     .then((res) => {
+        //         console.log(res);
+        //         success('The availability is created successfully');
+        //         form.resetFields();
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //         error('The availability creation failed');
+        //     });
+    };
+    
+    return (
+        <div>
+            <ConfigProvider renderEmpty={() => <Empty description="No Schedules Found" />}>
+                <Table
+                    loading={loading}
+                    columns={columns}
+                    dataSource={patients ? patients.map(patient => ({ ...patient, key: patient._id })) : []}
+                    pagination={{ defaultPageSize: 4, position: ['bottomCenter'] }}
+                />
+            </ConfigProvider>
+            {openModal && 
+                <Modal 
+                 title="Update Doctor" 
+                 open={openModal}
+                 onCancel={handleCancel}
+                 footer={null}
+                 >
+                <>
+                <Form
+            name="control-ref"
+            form={form}
+            labelCol={{ span: 24 }}
+            wrapperCol={{ span: 24 }}
+            style={{ marginTop: '0px', paddingTop: '10px' }}
+            onFinish={onFinish}
+        >
+            {/* Education Level of student */}
+            <Form.Item
+                name="name"
+                label="Doctor Name"
+                style={{ paddingRight: '8px', display: 'inline-block', width: 'calc(100% - 16px)' }}
+                rules={[{ required: true, message: 'Please select an educational level!' }]}
+            >
+                <Input />
+            </Form.Item>
+            {/* Subject */}
+            <Form.Item
+                label="Email"
+                name="email"
+                style={{ paddingRight: '8px', display: 'inline-block', width: 'calc(50% - 8px)' }}
+                rules={[{ required: true, message: 'Please input your email!' }, {
+                    type: 'email',
+                    message: 'Please input a valid email!',
+                }]}
+            >
+                <Input />
+            </Form.Item>
+            <Form.Item
+                label="Password"
+                name="password"
+                style={{ paddingRight: '8px', display: 'inline-block', width: 'calc(50% - 8px)' }}
+                rules={[{ required: true, message: 'Please input your password!' }]}
+            >
+                <Input.Password />
+            </Form.Item>
+            
+            <Form.Item style={{ paddingRight: '8px', display: 'inline-block', width: 'calc(100% - 16px)' }}>
+            <br />
+                <Button
+                    type="primary"
+                    block
+                    htmlType="submit"
+                    style={{ backgroundColor: '#047b9c'}}
+                >
+                    Update changes
+                </Button>
+            </Form.Item>
+        </Form>
+                 </>
+                </Modal>
+            }
+        </div>
+        
+    );
+};
+
+export default PatientsTable;
