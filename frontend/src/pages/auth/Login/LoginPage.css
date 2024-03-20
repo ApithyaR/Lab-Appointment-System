@@ -1,0 +1,15 @@
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    float: left;
+    width: 500px;
+    height: 31px;
+    margin: 0px 24px 16px 0;
+    color: #047A9C!important;
+}
+
+.backgroundLogin{
+    background: linear-gradient(rgba(0, 111, 145, 0.5), rgba(0, 111, 145, 0.5)), url('../../../assests/images/science.png');
+    /*background-repeat: no-repeat;*/
+    background-size: 100%;
+}
