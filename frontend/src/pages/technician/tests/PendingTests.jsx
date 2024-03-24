@@ -1,13 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Breadcrumb, theme} from 'antd';
-
-import AppointmentForm from "../../../components/forms/AppointmentForm/AppointmentForm";
-import {useSelector} from "react-redux";
 import jwt_decode from "jwt-decode";
-import {getAllAppointments} from "../../../services/appointment";
-import {getTests} from "../../../services/tests";
-import TechniciansTable from "../../../components/tables/TechniciansTable";
-import ReportsTable from '../../../components/tables/technician/TestsTable';
+import { getAllAppointments } from "../../../services/appointment";
 import TestsTable from '../../../components/tables/technician/TestsTable';
 
 const Tests = () => {
@@ -16,17 +10,18 @@ const Tests = () => {
     } = theme.useToken();
 
     const [tests, setTests] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
-    const { user } = useSelector((state) => ({ ...state }));
 
     const loadTestsData = () => {
-        const decoded = jwt_decode(localStorage.user)
-        console.log("decoded",decoded)
-        getTests(localStorage.user)
+        const decoded = jwt_decode(localStorage.getItem('user'))
+
+        getAllAppointments(localStorage.getItem('user'))
             .then((res) => {
-                console.log(res.data.data)
-                setTests(res.data.data)
+                const scheduledTests = res.data.data.filter((test) => test.status === 'scheduled');
+                console.log(scheduledTests)
+                setTests(scheduledTests)
+                setLoading(false)
             }).catch((err) => {
             console.log(err)
         })
@@ -35,7 +30,6 @@ const Tests = () => {
     useEffect(() => {
         loadTestsData();
     }, []);
-
 
     return (
         <div>

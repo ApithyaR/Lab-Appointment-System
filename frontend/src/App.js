@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import {Switch, Route, useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import jwt_decode from 'jwt-decode';
 
@@ -19,25 +19,27 @@ import RegisterPage from "./pages/auth/Register/RegisterPage";
 import PaymentPage from "./pages/patient/Appointments/PaymentPage";
 import TechniciansHome from './pages/technician/TechnicianHome';
 
+import { loggedInUser, logoutUser } from './redux/userReducer';
+
+
 function App() {
-
     const dispatch = useDispatch();
+    const history = useHistory();
 
-    // useEffect(() => {
-    //     if (localStorage.user) {
-    //         const decoded = jwtDecode(localStorage.user);
-    //         console.log(decoded);
-    //         dispatch({
-    //             type: 'LOGGED_IN_USER',
-    //             payload: {
-    //                 name: decoded.id.name,
-    //                 email: decoded.id.email,
-    //                 role: decoded.id.role,
-    //                 token: localStorage.user,
-    //             },
-    //         });
-    //     }
-    // }, [dispatch]);
+    const { user } = useSelector((state) => state);
+
+    useEffect(() => {
+        const storedToken = localStorage.getItem('user');
+        if (storedToken) {
+            const decoded = jwt_decode(storedToken);
+            dispatch(loggedInUser({
+                name: decoded.id.name,
+                email: decoded.id.email,
+                token: storedToken,
+                role: decoded.id.role,
+            }));
+        }
+    }, [dispatch]);
 
     useEffect(() => {
         console.log('useEffect for loading user from localStorage is running');
