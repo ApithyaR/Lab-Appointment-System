@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Breadcrumb, theme} from 'antd';
-import {useSelector} from "react-redux";
 import jwt_decode from "jwt-decode";
 import {getDoctors} from "../../../services/users";
 import DoctorsTable from '../../../components/tables/DoctorsTable';
@@ -11,17 +10,17 @@ const AllDoctors = () => {
     } = theme.useToken();
 
     const [doctors, setDoctors] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
-    const { user } = useSelector((state) => ({ ...state }));
 
     const loadDoctorsData = () => {
-        const decoded = jwt_decode(localStorage.user)
-        console.log("decoded",decoded)
-        getDoctors(localStorage.user)
+        const decoded = jwt_decode(localStorage.getItem('user'))
+        console.log("decoded", decoded)
+        getDoctors(localStorage.getItem('user'))
             .then((res) => {
                 console.log(res.data.data)
                 setDoctors(res.data.data)
+                setLoading(false)
             }).catch((err) => {
             console.log(err)
         })
@@ -50,7 +49,7 @@ const AllDoctors = () => {
                     borderRadius: borderRadiusLG,
                 }}
             >
-                <DoctorsTable loading={loading} doctors={doctors} />
+                <DoctorsTable loading={loading} doctors={doctors}/>
             </div>
         </div>
     );

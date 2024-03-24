@@ -1,0 +1,24 @@
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    float: left;
+    width: 400px;
+    height: 31px;
+    margin: 0px 700px 16px 0;
+    color: #047A9C!important;
+}
+
+.icon-item::after{
+    border-bottom: none !important;
+}
+
+.icon-item-align {
+    margin-left: auto
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: white !important;
+    z-index: 999;
+}

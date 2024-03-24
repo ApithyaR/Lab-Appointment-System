@@ -1,9 +1,5 @@
-
-
-
 const UserHomePage = () => {
-
-    return(
+    return (
         <h1>UserHomePage</h1>
     )
 }

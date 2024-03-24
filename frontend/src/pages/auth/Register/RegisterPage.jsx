@@ -1,12 +1,12 @@
 import React from 'react';
-import {Flex, Layout, theme, Typography} from 'antd';
+import {Flex, Layout, Typography} from 'antd';
 import CommonFooter from '../../../components/footers/commonFooter/CommonFooter';
 import RegisterForm from '../../../components/forms/RegisterForm/RegisterForm';
 import CommonHeader from "../../../components/headers/commonHeader/CommonHeader";
 import '../Login/LoginPage.css'
 
 const {Content} = Layout;
-const {Title, Text} = Typography;
+const {Title} = Typography;
 
 const RegisterPage = () => {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button, ConfigProvider, Empty, Tag } from 'antd';
+import {Button, ConfigProvider, Empty, Table, Tag} from 'antd';
 import moment from 'moment';
 
 const columns = [
@@ -41,15 +41,15 @@ const columns = [
     },
 ];
 
-const index = ({ schedules, loading }) => {
+const index = ({schedules, loading}) => {
     return (
         <div>
-            <ConfigProvider renderEmpty={() => <Empty description="No Schedules Found" />}>
+            <ConfigProvider renderEmpty={() => <Empty description="No Schedules Found"/>}>
                 <Table
                     loading={loading}
                     columns={columns}
                     dataSource={schedules}
-                    pagination={{ defaultPageSize: 4, position: ['bottomCenter'] }}
+                    pagination={{defaultPageSize: 4, position: ['bottomCenter']}}
                 />
             </ConfigProvider>
         </div>

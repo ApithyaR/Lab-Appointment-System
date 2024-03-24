@@ -1,6 +1,5 @@
 import React from 'react';
-import { Table, Button, ConfigProvider, Empty, Tag } from 'antd';
-import moment from 'moment';
+import {Button, ConfigProvider, Empty, Table} from 'antd';
 
 const columns = [
     {
@@ -37,24 +36,24 @@ const columns = [
         title: 'Delete',
         dataIndex: 'delete',
         render: (_, record) => (
-            <Button danger onClick={()=>console.log("delete patient: ",record._id)}>
+            <Button danger onClick={() => console.log("delete patient: ", record._id)}>
                 Delete
             </Button>
         ),
     },
 ];
 
-const TechniciansTable = ({ technicians, loading }) => {
+const TechniciansTable = ({technicians, loading}) => {
     return (
         <div>
-            <ConfigProvider renderEmpty={() => <Empty description="No Schedules Found" />}>
+            <ConfigProvider renderEmpty={() => <Empty description="No Schedules Found"/>}>
                 <Table
                     loading={loading}
                     columns={columns}
                     dataSource={technicians}
-                    pagination={{ defaultPageSize: 4, position: ['bottomCenter'] }}
+                    pagination={{defaultPageSize: 4, position: ['bottomCenter']}}
                 />
-            </ConfigProvider>          
+            </ConfigProvider>
         </div>
     );
 };

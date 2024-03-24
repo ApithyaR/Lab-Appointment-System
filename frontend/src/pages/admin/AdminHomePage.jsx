@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined} from '@ant-design/icons';
 
-import {Breadcrumb, Layout, Menu, theme, Button} from 'antd';
+import {Button, Layout, Menu, theme} from 'antd';
 import {useDispatch} from "react-redux";
 import {useHistory} from "react-router-dom";
 import CreateAppointment from "./appointment/CreateAppointment";
@@ -37,11 +37,11 @@ const items = [
     getItem('Doctors', 'sub2', <TeamOutlined/>, [
         getItem('Create Doctor', '5'),
         getItem('All Doctors', '6'),
-   
+
     ]),
     getItem('Appointments', '9', <FileOutlined/>, [
         getItem('Create Appointments', '7'),
-        getItem('All Appointments', '8')   
+        getItem('All Appointments', '8')
     ]),
 
 ];
@@ -50,7 +50,7 @@ const App = () => {
 
     const [collapsed, setCollapsed] = useState(false);
     const {
-        token: {colorBgContainer, borderRadiusLG},
+        token: {colorBgContainer},
     } = theme.useToken();
 
     const dispatch = useDispatch();
@@ -71,9 +71,12 @@ const App = () => {
             }}
         >
             <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-                <div className="demo-logo-vertical" style={{ height: '70px', color: "white", marginLeft: '15px', marginTop: '40px'}}><h2> ABC Laboratories</h2></div>
+                <div className="demo-logo-vertical"
+                     style={{height: '70px', color: "white", marginLeft: '15px', marginTop: '40px'}}><h2> ABC
+                    Laboratories</h2></div>
                 <Button onClick={logout}>logout</Button>
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={(item) => setActiveMenuItem(item.key)}/>
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items}
+                      onClick={(item) => setActiveMenuItem(item.key)}/>
             </Sider>
             <Layout>
                 <Header
@@ -87,17 +90,17 @@ const App = () => {
                         margin: '0 16px',
                     }}
                 >
-                        {activeMenuItem === '7' && <CreateAppointment />}
-                        {activeMenuItem === '8' && <MyAppointments />}
+                    {activeMenuItem === '7' && <CreateAppointment/>}
+                    {activeMenuItem === '8' && <MyAppointments/>}
 
-                        {activeMenuItem === '5' && <CreateDoctors />}
-                        {activeMenuItem === '6' && <AllDoctors />}
+                    {activeMenuItem === '5' && <CreateDoctors/>}
+                    {activeMenuItem === '6' && <AllDoctors/>}
 
-                        {activeMenuItem === '3' && <CreatePatients />}
-                        {activeMenuItem === '4' && <AllPatients />}
+                    {activeMenuItem === '3' && <CreatePatients/>}
+                    {activeMenuItem === '4' && <AllPatients/>}
 
-                        {activeMenuItem === 'tech-4' && <AllTechnicians />}
-                        {activeMenuItem === 'tech-1' && <CreateTechnician />}
+                    {activeMenuItem === 'tech-4' && <AllTechnicians/>}
+                    {activeMenuItem === 'tech-1' && <CreateTechnician/>}
 
                 </Content>
                 <Footer

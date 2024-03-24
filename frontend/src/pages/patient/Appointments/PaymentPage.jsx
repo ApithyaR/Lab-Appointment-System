@@ -24,19 +24,19 @@ const PaymentPage = () => {
 
             try {
                 const { patientId, doctorId, testId, timeslotId, appointmentCost } = location.state;
-                const { client_secret } = await makePayment(appointmentCost, localStorage.user);
+                // const { client_secret } = await makePayment(appointmentCost, localStorage.user);
+                //
+                // const { paymentMethod } = await stripe.confirmCardPayment(client_secret, {
+                //     payment_method: {
+                //         card: elements.getElement(CardElement),
+                //     },
+                // });
 
-                const { paymentMethod } = await stripe.confirmCardPayment(client_secret, {
-                    payment_method: {
-                        card: elements.getElement(CardElement),
-                    },
-                });
-
-                if (paymentMethod) {
-                    success('Payment successful');
-
+                // if (paymentMethod) {
+                //     success('Payment successful');
+                //
                     // Create the appointment after successful payment
-                    await createAppointment(localStorage.user, {
+                    await createAppointment(localStorage.getItem('user'), {
                         patientId,
                         doctorId,
                         testId,
@@ -44,9 +44,9 @@ const PaymentPage = () => {
                     });
 
                     history.push('/appointments');
-                } else {
-                    error('Payment failed');
-                }
+                // } else {
+                //     error('Payment failed');
+                // }
             } catch (err) {
                 error('Payment failed');
                 console.error(err);

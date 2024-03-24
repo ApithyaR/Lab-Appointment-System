@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Layout, Tabs, Typography } from 'antd';
-import { useSelector } from 'react-redux';
-import CommonHeader from '../../../../components/headers/commonHeader/CommonHeader';
+import React, {useEffect, useState} from 'react';
+import {Layout, Typography} from 'antd';
+import PatientHeader from "../../../../components/headers/patientHeader/PatientHeader";
 import CommonFooter from '../../../../components/footers/commonFooter/CommonFooter';
 import "./../CreateAppointments/CreateAppointment.css"
 
@@ -10,26 +9,25 @@ import MyAppointmentsTable from "../../../../components/tables/MyAppointments";
 import {getAppointments} from "../../../../services/appointment";
 import jwt_decode from 'jwt-decode';
 
-// import { getStudentSchedules } from '../../../services/schedule';
 
-const { Content } = Layout;
-const { TabPane } = Tabs;
+const {Content} = Layout;
+
 
 const MyAppointments = () => {
 
     const [appointments, setAppointments] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
-    const { user } = useSelector((state) => ({ ...state }));
 
     const loadAppointmentData = () => {
-        const decoded = jwt_decode(localStorage.user)
-        console.log("decoded",decoded)
-        getAppointments(localStorage.user)
+        const decoded = jwt_decode(localStorage.getItem('user'))
+        console.log("decoded", decoded)
+        getAppointments(localStorage.getItem('user'))
             .then((res) => {
                 setAppointments(res.data.data)
+                setLoading(false)
             }).catch((err) => {
-                console.log(err)
+            console.log(err)
         })
     }
 
@@ -38,14 +36,13 @@ const MyAppointments = () => {
     }, []);
 
 
-
     return (
         <Layout className="layout">
-            <CommonHeader />
+            <PatientHeader/>
             <div className="backgroundApp">
                 <Typography.Title
                     level={2}
-                    style={{ paddingTop: '30px', paddingLeft: '50px', color: '#fff' }}
+                    style={{paddingTop: '70px', paddingLeft: '50px', color: '#fff'}}
                 >
                     My Appointments
                 </Typography.Title>
@@ -56,25 +53,20 @@ const MyAppointments = () => {
                     alignSelf: 'center',
                     height: '74vh'
                 }}>
-                    <div  style={{
+                    <div style={{
                         padding: 24,
                         width: 900,
                         height: 500,
-                        //     minHeight: 360,
-                        //     marginTop: 200,
-                        //     marginBottom:150,
-                        //     marginRight: 600,
-                        //     marginLeft: 600,
                         backgroundColor: "white",
                         borderRadius: 10
                     }}>
                         <div className="site-layout-content">
-                            <MyAppointmentsTable  schedules={appointments} loading={loading}/>
+                            <MyAppointmentsTable schedules={appointments} loading={loading}/>
                         </div>
                     </div>
                 </Content>
             </div>
-            <CommonFooter />
+            <CommonFooter/>
         </Layout>
     );
 };

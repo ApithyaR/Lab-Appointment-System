@@ -1,11 +1,10 @@
 import React from 'react';
-import {Button, Layout, Menu} from 'antd';
+import {Button, Layout} from 'antd';
 
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import {useHistory} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 
-const { Header } = Layout;
-const { Item } = Menu;
+const {Header} = Layout;
 
 const CommonHeader = () => {
 
@@ -21,7 +20,7 @@ const CommonHeader = () => {
     };
 
     return (
-        <Header className="header" style={{ backgroundColor: 'white'}}>
+        <Header className="header" style={{backgroundColor: 'white'}}>
             <div className="logo">ABC Laboratories</div>
             <Button onClick={logout}></Button>
         </Header>

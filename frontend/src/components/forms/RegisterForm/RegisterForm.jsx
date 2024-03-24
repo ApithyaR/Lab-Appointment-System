@@ -1,81 +1,15 @@
-// import React, { useEffect } from 'react';
-// import { useHistory } from 'react-router-dom';
-// import { Typography, Form, Input, Button, Select, Row, Col, Checkbox} from 'antd';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { registerP } from '../../../services/auth';
-// import { error, success } from '../../messages/CustomMessage';
+import React, {useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
+import {Button, Checkbox, Form, Input, Select} from 'antd';
+import {useDispatch, useSelector} from 'react-redux';
+import {registerPatient} from '../../../services/auth';
+import {error, success} from '../../messages/CustomMessage';
 
-// const { Option } = Select;
-// const RegisterForm = () => {
-//     const history = useHistory();
-
-//     const { user } = useSelector((state) => ({ ...state }));
-//     const dispatch = useDispatch();
-
-//     const [form] = Form.useForm();
-
-//     useEffect(() => {
-//         const intended = history.location.state;
-//         if (intended) {
-//             return;
-//         }
-
-//         if (user && user.token && user.role === 'patient') history.push('/patient/create-appointment');
-//         if (user && user.token && user.role === 'admin') history.push('/admin/dashboard');
-
-//     }, [user, history]);
-
-//     const roleBasedRedirect = (res) => {
-//         if (res.data.role === 'admin') {
-//             history.push('/admin/dashboard');
-//         } else if (res.data.role === 'patient') {
-//             history.push('/patient/create-appointment');
-//         }
-//     };
-
-//     const onFinish = (values) => {
-//         register(values)
-//             .then((res) => {
-//                 success('The login was successful');
-
-//                 dispatch({
-//                     type: 'LOGGED_IN_USER',
-//                     payload: {
-//                         name: res.data.name,
-//                         email: res.data.email,
-//                         token: res.data.token,
-//                         role: res.data.role,
-//                     },
-//                 });
-//                 localStorage.setItem('user', res.data.token);
-//                 roleBasedRedirect(res);
-//             })
-//             .catch((err) => {
-//                 console.log(err);
-//                 error('Login Failed');
-//             });
-//     };
-
-//     return (
-        
-//     );
-// };
-
-// export default RegisterForm;
-
-
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Typography, Form, Input, Button, Select, Row, Col, Checkbox} from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
-import { registerPatient } from '../../../services/auth';
-import { error, success } from '../../messages/CustomMessage';
-
-const { Option } = Select;
+const {Option} = Select;
 const RegisterForm = () => {
     const history = useHistory();
 
-    const { user } = useSelector((state) => ({ ...state }));
+    const {user} = useSelector((state) => ({...state}));
     const dispatch = useDispatch();
 
     const [form] = Form.useForm();
@@ -118,7 +52,7 @@ const RegisterForm = () => {
             })
             .catch((err) => {
                 console.log(err);
-                error('Login Failed');
+                error('Register Failed');
             });
     };
 
@@ -142,9 +76,9 @@ const RegisterForm = () => {
                 name="name"
                 label="name"
                 tooltip="What do you want others to call you?"
-                rules={[{ required: true, message: 'Please input your name!', whitespace: true }]}
+                rules={[{required: true, message: 'Please input your name!', whitespace: true}]}
             >
-                <Input />
+                <Input/>
             </Form.Item>
 
             <Form.Item
@@ -161,7 +95,7 @@ const RegisterForm = () => {
                     },
                 ]}
             >
-                <Input />
+                <Input/>
             </Form.Item>
 
             <Form.Item
@@ -175,7 +109,7 @@ const RegisterForm = () => {
                 ]}
                 hasFeedback
             >
-                <Input.Password />
+                <Input.Password/>
             </Form.Item>
 
             <Form.Item
@@ -188,7 +122,7 @@ const RegisterForm = () => {
                         required: true,
                         message: 'Please confirm your password!',
                     },
-                    ({ getFieldValue }) => ({
+                    ({getFieldValue}) => ({
                         validator(_, value) {
                             if (!value || getFieldValue('password') === value) {
                                 return Promise.resolve();
@@ -198,7 +132,7 @@ const RegisterForm = () => {
                     }),
                 ]}
             >
-                <Input.Password />
+                <Input.Password/>
             </Form.Item>
 
 
@@ -248,11 +182,11 @@ const RegisterForm = () => {
                 ]}
             >
                 <Checkbox>
-                    I have read the <a href="">agreement</a>
+                    I have read the agreement
                 </Checkbox>
             </Form.Item>
             <Form.Item>
-                <Button type="primary" block htmlType="submit" style={{ backgroundColor: '#047b9c'}}>
+                <Button type="primary" block htmlType="submit" style={{backgroundColor: '#047b9c'}}>
                     Register
                 </Button>
             </Form.Item>

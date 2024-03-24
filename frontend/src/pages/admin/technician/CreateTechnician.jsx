@@ -1,7 +1,5 @@
 import React from 'react';
 import {Breadcrumb, theme} from 'antd';
-
-import AppointmentForm from "../../../components/forms/AppointmentForm/AppointmentForm";
 import CreateTechnicianForm from "../../../components/forms/CreateTechnicianForm";
 
 const CreateTechnician = () => {

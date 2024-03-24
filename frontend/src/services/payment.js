@@ -11,8 +11,7 @@ exports.makePayment = async (appointmentCost, userId) => {
                 userId,
             },
         });
-
-        return { client_secret: paymentIntent.client_secret };
+        return {client_secret: paymentIntent.client_secret};
     } catch (error) {
         if (error.type === 'StripeCardError') {
             // Handle card-related errors (e.g., declined card)
@@ -21,7 +20,6 @@ exports.makePayment = async (appointmentCost, userId) => {
             // Handle rate limiting errors
             console.log('Too many requests. Please try again later');
         } else {
-
             console.error('Error creating payment intent:', error);
         }
     }

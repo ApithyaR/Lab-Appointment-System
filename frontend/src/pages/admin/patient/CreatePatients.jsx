@@ -25,7 +25,7 @@ const CreatePatients = () => {
                     borderRadius: borderRadiusLG,
                 }}
             >
-                <CreatePatientForm />
+                <CreatePatientForm/>
             </div>
         </div>
     );

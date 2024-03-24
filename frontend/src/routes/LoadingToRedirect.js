@@ -1,19 +1,18 @@
-
-import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Result, Layout } from 'antd';
-import { useSelector } from 'react-redux';
+import React, {useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import {Layout, Result} from 'antd';
+import {useSelector} from 'react-redux';
 
 import CommonHeader from '../components/headers/commonHeader/CommonHeader';
 import CommonFooter from '../components/footers/commonFooter/CommonFooter';
 
-const { Content } = Layout;
+const {Content} = Layout;
 
 const LoadingToRedirect = () => {
     const [count, setCount] = useState(5);
     const history = useHistory();
 
-    const { user } = useSelector((state) => ({ ...state }));
+    const {user} = useSelector((state) => ({...state}));
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -33,14 +32,14 @@ const LoadingToRedirect = () => {
 
     return (
         <Layout className="layout">
-            <CommonHeader />
+            <CommonHeader/>
             <Content className="content-body">
                 <Result
                     status="warning"
                     title={`You are not authorized to do this operation. Will be redirected in ${count}`}
                 />
             </Content>
-            <CommonFooter />
+            <CommonFooter/>
         </Layout>
     );
 };

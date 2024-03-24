@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Breadcrumb, theme} from 'antd';
 import jwt_decode from "jwt-decode";
-import { getAllAppointments } from "../../../services/appointment";
+import {getAllAppointments} from "../../../services/appointment";
 import TestsTable from '../../../components/tables/technician/TestsTable';
 
-const Tests = () => {
+const PendingTests = () => {
     const {
         token: {colorBgContainer, borderRadiusLG},
     } = theme.useToken();
@@ -39,7 +39,7 @@ const Tests = () => {
                 }}
             >
                 <Breadcrumb.Item>Tests</Breadcrumb.Item>
-                <Breadcrumb.Item>All Tests</Breadcrumb.Item>
+                <Breadcrumb.Item>Pending Tests</Breadcrumb.Item>
             </Breadcrumb>
             <div
                 style={{
@@ -54,6 +54,6 @@ const Tests = () => {
         </div>
     );
 };
-export default Tests;
+export default PendingTests;
 
 
