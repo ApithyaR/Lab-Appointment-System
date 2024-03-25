@@ -59,12 +59,12 @@ function App() {
             <Route exact path="/login" component={LoginPage}/>
             <Route exact path="/registration" component={RegisterPage}/>
 
-            <PatientRoute exact path="/patient/my-appointments" component={MyAppointments}/>
-            <PatientRoute exact path="/patient/create-appointment" component={CreateAppointment}/>
-            <PatientRoute exact path="/patient/payment" component={PaymentPage}/>
+            <Route exact path="/patient/my-appointments" component={MyAppointments}/>
+            <Route exact path="/patient/create-appointment" component={CreateAppointment}/>
+            <Route exact path="/patient/payment" component={PaymentPage}/>
 
-            <AdminRoute exact path="/admin/dashboard" component={AdminHomePage}/>
-            <AdminRoute exact path="/admin/create-appointments" component={CreateAppointmentPage}/>
+            <Route exact path="/admin/dashboard" component={AdminHomePage}/>
+            <Route exact path="/admin/create-appointments" component={CreateAppointmentPage}/>
 
             <Route exact path="/tech/dashboard" component={TechniciansHome}/>
         </Switch>

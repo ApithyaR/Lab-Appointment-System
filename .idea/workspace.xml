@@ -6,55 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="be00624e-f0e1-4a38-a22c-4ea112c5e7cc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/footers/commonFooter/CommonFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/footers/commonFooter/CommonFooter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/AppointmentForm/AppointmentForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/AppointmentForm/AppointmentForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/CreateDoctorForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/CreateDoctorForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/CreatePatientForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/CreatePatientForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/CreateTechnicianForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/CreateTechnicianForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/forms/RegisterForm/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/forms/RegisterForm/RegisterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/headers/commonHeader/CommonHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/headers/commonHeader/CommonHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/headers/patientHeader/PatientHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/headers/patientHeader/PatientHeader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/headers/patientHeader/PatientHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/headers/patientHeader/PatientHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/messages/CustomMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/messages/CustomMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/modal/DoctorCreateModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/modal/DoctorCreateModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tables/DoctorsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tables/DoctorsTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tables/MyAppointments/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tables/MyAppointments/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tables/PatientsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tables/PatientsTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tables/TechniciansTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tables/TechniciansTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tables/Tests/Tests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tables/Tests/Tests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tables/technician/CompletedTestsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tables/technician/CompletedTestsTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tables/technician/TestsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tables/technician/TestsTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/UserHomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/UserHomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/AdminHomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/AdminHomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/doctor/AllDoctors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/doctor/AllDoctors.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/doctor/CreateDoctors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/doctor/CreateDoctors.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/patient/AllPatients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/patient/AllPatients.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/patient/CreatePatients.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/patient/CreatePatients.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/technician/AllTechnicians.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/technician/AllTechnicians.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/admin/technician/CreateTechnician.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/admin/technician/CreateTechnician.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/auth/Login/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/auth/Login/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/auth/Register/RegisterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/auth/Register/RegisterPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/patient/Appointments/CreateAppointments/CreateAppointment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/patient/Appointments/CreateAppointments/CreateAppointment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/patient/Appointments/MyAppointments/MyAppointments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/patient/Appointments/MyAppointments/MyAppointments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/patient/Appointments/PaymentPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/patient/Appointments/PaymentPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/technician/TechnicianHome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/technician/TechnicianHome.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/technician/Tests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/technician/Tests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/technician/tests/CompletedTests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/technician/tests/CompletedTests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/technician/tests/PendingTests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/technician/tests/PendingTests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/redux/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/AdminRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/AdminRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/LoadingToRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/LoadingToRedirect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/routes/PatientRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/routes/PatientRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/appointment.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/appointment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/testResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/testResult.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/timeslots.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/timeslots.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712483001116</updated>
       <workItem from="1712483002202" duration="2127000" />
-      <workItem from="1712485410885" duration="29639000" />
+      <workItem from="1712485410885" duration="32499000" />
     </task>
     <servers />
   </component>
